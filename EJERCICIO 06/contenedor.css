@@ -1,0 +1,46 @@
+#contenedor{
+    background-color: #F4ABF2;
+    border-radius:5px;
+    text-align:center;
+    margin-left:20px;
+    box-shadow: 5px 5px 5px #ccc;
+    margin-left:20px;
+}
+#cabecera{
+    background-color:#efcc94;
+                    border: 2px solid #ff0000;
+    height: 20%;
+                    border-radius: 5px;
+                    border: 2px solid #FF0000;
+}
+#menu{
+    height:10%;
+    background-color:#C8CACC;
+                    border-radius: 5px;
+                    border: 1px solid #FF0000;
+                    margin-top: 2;
+}
+#izquierda{
+    height: 50%;
+    background-color: #d85538;
+    float: left;
+    width: 50%;
+                    border-radius: 5px;
+                    margin-top: 5;
+}
+#derecha{
+    height: 50%;
+    background-color: #2355df;
+    float: right;
+    width: 50%;
+                    border-radius: 5px;
+                    margin-top: 5;
+}
+#pie{
+    height: 20%;
+    background-color: #20ef1c;
+    clear:both;
+                    border-radius: 5px;
+                    border: 5px solid #FF0000;
+                    margin-top: 1;
+}
