@@ -1,0 +1,11 @@
+#caja-colorida { 
+width: 100px; 
+height: 100px; 
+background-color: blue; /*Color inicial (HTML/CSS)*/
+transition: background-color 0.5s; 
+} 
+/* Clase de CSS que JavaScript anadir */
+.color-alternativo {
+background-color: red !important;
+/*important para asegurar el cambio! */
+} 
