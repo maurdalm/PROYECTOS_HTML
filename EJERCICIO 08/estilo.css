@@ -1,0 +1,10 @@
+/*estilo.css*/
+
+#miboton{
+    background-color: yellow;
+    color: red;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
