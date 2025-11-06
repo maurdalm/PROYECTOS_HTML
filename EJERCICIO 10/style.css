@@ -3,15 +3,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
-background-color: #f0f0f0;
+background-color: #c2b9b9;
 margin: 0; 
 font-family: Arial, sans-serif; 
 } 
 .calculator {
-border: 1 px solid #ccc;
+border: 1 px solid #c2b9b9;
 border-radius: 10px;
 padding: 15px; 
-background-color: #333;
+background-color: #182068;
 box-shadow: 0 4px 8pxrgba(0, 0, 0, 0.2); 
 } 
 .display {
@@ -23,7 +23,7 @@ font-size: 2em;
 text-align: right;
 border: none;
 border-radius: 5px;
-background-color: #eee; 
+background-color: #c2b9b9; 
 box-sizing: border-box; /* Asegura que el padding no cambie el ancho total */
 } 
 .buttons {
