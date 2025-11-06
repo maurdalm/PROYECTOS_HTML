@@ -27,8 +27,9 @@
     </head>
     <body>
         <div class="contenedor">
-            <h1>Ejemplo de Formulario HTML Completo</h1>
-            <p>Este formulario incluye las etiquetas más comunes y validación con JavaScript.</p>
+            <h1>Datos de Contacto</h1>
+            <p>Este formulario incluye los datos de contacto del cliente para que un asesor de servicio le pueda 
+                mostrar el portafolio de servicios.</p>
             <form id="registroForm" action="/procesar-datos" method="post" novalidate>
                 <fieldset>
                 <legend>Datos Personales</legend>
@@ -48,11 +49,11 @@
                 <div class="error" id="errorPassword"></div>
             </div>
             <div class="grupo-control">
-                <label for="edad">Edad (type="number"):</label>
+                <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" min="18" max="99" value="25">
             </div>
             </fieldset>
-            <fieldset>
+            <!--<fieldset>
                 <legend>Opciones y Selecciones</legend>
                 <div class="grupo-control">
                     <p>Tipo de Usuario:</p>
@@ -94,17 +95,17 @@
                     <option value="Node.js"></option>
                     </datalist>
                 </div>
-            </fieldset>
+            </fieldset>-->
             <fieldset>
                 <legend>Comentarios</legend>
                 <div class="grupo-control">
                     <label for="comentarios">Comentarios Adicionales:</label>
                     <textarea id="comentarios" name="comentarios" rows="4" placeholder="Máximo 200 caracteres..." maxlength="200"></textarea>
                 </div>
-                <div class="grupo-control">
-                    <label for="archivo">Subir Archivo (type="file"):</label>
+                <!--<div class="grupo-control">
+                    <label for="archivo">Subir Archivo:</label>
                     <input type="file" id="archivo" name="archivo">
-                </div>
+                </div>-->
             </fieldset>
             <button type="submit">Enviar Formulario</button>
             <button type="reset">Limpiar</button>
