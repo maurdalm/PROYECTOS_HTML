@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Mauricio Daleman Mahecha",
+    "lema": "Siempre se puede aprender algo nuevo",
+    "bio": "Estudiante de Talento Tech, apasionada por las telecomunicaciones y la exploracion de nuevas tecnologuias.",
+    "avatar": "./imagenes/imagen01.jpg",
+    "roles": ["frontend"],
+    "logros": ["1er lugar Hackathon Talento Tech 2024", "Mentora junior"],
+    "proyectos": [{ "title": "App de tareas", "link": "#" }],
+    "gallery": [
+      "./imagenes/imagen02.jpg",
+      "./imagenes/imagen03.jpg",
+      "./imagenes/imagen04.jpg"
+    ],
+    "videoEmbed": "https://www.youtube.com/embed/sVDKz7H8lt4?si=mZljQRfHm1FIG70t",
+    "audio": {
+      "type": "spotify",
+      "src": "https://open.spotify.com/embed/track/5YyetAy34sgROhslaW3BZc"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Carlos Gómez",
+    "lema": "Código limpio",
+    "bio": "Backend y APIs. Fan de buenas prácticas y documentación.",
+    "avatar": "https://images.unsplash.com/photo-1545996124-1f12f5f8b4d4?w=800&q=60",
+    "roles": ["backend"],
+    "logros": ["Implementó CI/CD para 3 proyectos"],
+    "proyectos": [{ "title": "API de inventario", "link": "#" }],
+    "gallery": [],
+    "videoEmbed": "",
+    "audio": {
+      "type": "file",
+      "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    }
+  }
+]

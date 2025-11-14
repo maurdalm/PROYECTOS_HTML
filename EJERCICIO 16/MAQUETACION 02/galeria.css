@@ -1,0 +1,92 @@
+body {
+  background-color: #f4e1c1; /* color pergamino */
+  color: #3b2f2f;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  background-image: radial-gradient(#f4e1c1 85%, #e0c097 100%);
+  height: 100vh;
+
+  /* Borde y textura de cartel */
+  border: 10px solid #5a3e2b;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) inset,
+              0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Texto principal tipo “SE BUSCA” */
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  color: #3b2f2f;
+  text-shadow: 2px 2px 0 #d6b88a, 4px 4px 0 #5a3e2b;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+}
+
+/* Subtítulo o descripción */
+p {
+  font-size: 24px;
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+/* Imagen del “buscado” */
+img {
+  display: block;
+  filter: sepia(0.8) contrast(1.2);
+}
+
+figcaption {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #4b3b2a;
+  text-shadow: 1px 1px 0 #d6b88a;
+  letter-spacing: 1px;
+}
+
+/* --- Contenedor principal --- */
+.galeria-contenedor {
+  width: 90%;
+  max-width: 900px;
+  min-height: 600px;
+  margin: 0 auto;
+  overflow: hidden; /* evita desbordes por float */
+}
+
+/* --- Elementos de la galería --- */
+.foto-item {
+  width: 180px;
+  height: 180px;
+  background-color: #ffffff;
+  border: 2px solid #5a3e2b;
+  float: left; /* posición horizontal */
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* incluye borde y padding en el tamaño total */
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* --- Efectos al pasar el ratón --- */
+.foto-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+  .foto-item {
+    width: 45%;
+    height: auto;
+  }
+}

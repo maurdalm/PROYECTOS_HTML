@@ -1,0 +1,59 @@
+/* --- Estilos globales --- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #120870;
+  text-align: center;
+  background-image: url("imagenes/imagen 01.jpg");
+  background-size: cover;         /* cubre toda la pantalla */
+  background-position: center;    /* centrada */
+  background-attachment: fixed;   /* efecto parallax */
+}
+
+/* --- Barra de navegación --- */
+.barra-nav {
+  background-color: #120870;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* --- Lista dentro del nav --- */
+.barra-nav ul {
+  list-style: none;          /* elimina viñetas */
+  margin: 0;
+  padding: 0;
+  display: flex;             /* organiza horizontalmente */
+  justify-content: center;   /* centra los elementos */
+}
+
+/* --- Elementos de la lista --- */
+.barra-nav li {
+  display: inline-block;
+}
+
+/* --- Enlaces --- */
+.barra-nav a {
+  display: block;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;     /* sin subrayado */
+  transition: background 0.3s;
+}
+
+/* --- Efecto hover --- */
+.barra-nav a:hover {
+  background-color: #555;
+}
+
+/* --- Enlace activo --- */
+.barra-nav a.activo {
+  background-color: #0077b6;
+}
+
+/* --- Contenido principal --- */
+main {
+  margin-top: 50px;
+}
+
+h1 {
+  color: #120870;
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil Profesional</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#0ea5e9;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:var(--bg);color:#0b1220}
+    .container{max-width:980px;margin:2rem auto;padding:1rem}
+    header{display:flex;gap:1rem;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1.6rem}
+    .intro{flex:1}
+    h1{margin:0;font-size:1.5rem}
+    p.role{margin:.2rem 0;color:var(--muted)}
+    .contact{margin-top:.6rem;font-size:.95rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:1rem}
+    .card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 8px 24px rgba(11,18,32,0.05)}
+    h2{margin:0 0 .6rem 0;font-size:1.05rem}
+    ul{margin:0;padding-left:1.1rem}
+    .skill{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+    .bar{height:10px;background:#e6eef6;border-radius:999px;flex:1;margin-left:.6rem;margin-right:.6rem;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa);}
+    .exp-item{margin-bottom:.8rem}
+    .muted{color:var(--muted);font-size:.95rem}
+    footer{text-align:center;margin-top:1rem;color:var(--muted);font-size:.9rem}
+    .controls{display:flex;gap:.5rem}
+    button{background:var(--accent);color:white;border:0;padding:.45rem .7rem;border-radius:8px;cursor:pointer}
+    @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">TU</div>
+      <div class="intro">
+        <h1>Mauricio Alberto Daleman Mahecha</h1>
+        <p class="role">Aprendiz de desarrollador Frontend • Especialista en gerencia de proyectos de telecomunicaciones • Ingeniero electrónico</p>
+        <div class="contact muted">📧 maurdalm@gmail.com • 📍 Bogota, Colombia • ☏ +57 305 7062202</div>
+      </div>
+      <div class="controls">
+        <button onclick="imprimirCV()">Imprimir / Exportar</button>
+        <button onclick="toggleTheme()">Cambiar tema</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Resumen profesional</h2>
+        <p class="muted">Ingeniero con 27 años de experiencia en proyectos de telecomunicaciones, especializado en Gerencia de proyectos de telecomunicaciones. Me interesa las nuevas tecnologias en la nube, el desarrollo de software y buenas prácticas de ingeniería.</p>
+        <p>Aprendis de desarrollador Frontend html, css, javascript y python</p>
+
+        <h2 style="margin-top:1rem">Experiencia</h2>
+        <div class="exp-item">
+          <strong>Empresa de Telecomunicaciones de Bogota — Ingeniero de proyectos</strong>
+          <div class="muted">1997 — Presente</div>
+          <div>Trabajo en pruebas de equipos de telecomunicaciones, evaluando fallas en la red de datos de etba y en la mejora continua de servicios.</div>
+        
+        <h2 style="margin-top:1rem">Educación</h2>
+        <ul>
+          <li><strong>Universidad Los Libertadores</strong> — Ingeniería Electrónica (1995 — 2002)</li>
+          <li><strong>Cursos:</strong> diplomados en redes de datos, gerencia de proyectos, certificacion CCNA, CCNP de cisco JNCA de Juniper</li>
+        </ul>
+      </section>
+
+      <aside class="card">
+        <h2>Habilidades</h2>
+        <div class="skill"><span>HTML / CSS</span><div class="bar" title="10%"><i style="width:10%"></i></div><span class="muted">10%</span></div>
+        <div class="skill"><span>JavaScript / TypeScript</span><div class="bar" title="10%"><i style="width:10%"></i></div><span class="muted">10%</span></div>
+        <div class="skill"><span>Redes de Datos</span><div class="bar" title="95%"><i style="width:95%"></i></div><span class="muted">95%</span></div>
+        <div class="skill"><span>Gestion de proyectos</span><div class="bar" title="85%"><i style="width:85%"></i></div><span class="muted">85%</span></div>
+
+        <h2 style="margin-top:1rem">Idiomas</h2>
+        <ul>
+          <li>Español — Nativo</li>
+          <li>Inglés — Avanzado (B2)</li>
+        </ul>
+
+        <h2 style="margin-top:1rem">Enlaces</h2>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 Perfil de Mauricio ALberto Daleman Mahecha. Todos los derechos reservados.
+    </footer>
+  </div>
+
+  <script>
+    function imprimirCV(){
+      window.print();
+    }
+    function toggleTheme(){
+      const root = document.documentElement;
+      const dark = root.style.getPropertyValue('--bg') === '#11121a';
+      if(!dark){
+        root.style.setProperty('--bg','#11121a');
+        root.style.setProperty('--card','#0b1220');
+        root.style.setProperty('--accent','#7c3aed');
+        root.style.setProperty('--muted','#9aa3b2');
+        document.body.style.color='#e6eef6';
+      } else {
+        root.style.setProperty('--bg','#f6f8fb');
+        root.style.setProperty('--card','#fff');
+        root.style.setProperty('--accent','#0ea5e9');
+        root.style.setProperty('--muted','#6b7280');
+        document.body.style.color='#0b1220';
+      }
+    }
+  </script>
+</body>
+</html>

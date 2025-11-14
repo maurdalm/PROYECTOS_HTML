@@ -1,0 +1,74 @@
+body {
+  background-color: #e6eef5;
+  font-family: Arial, sans-serif;
+}
+
+.perfil-tarjeta {
+  background-color: #c6dbf7;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: auto;
+  margin: 10px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.perfil-tarjeta .descripcion {
+  color: #555;
+}
+
+/* --- Sección de estadísticas --- */
+.perfil-estadisticas h3 {
+  color: #228be6;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.estadisticas-contenedor {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.estadistica-item {
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  flex: 1;
+  padding: 10px 0;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+.estadistica-item strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.estadistica-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.estadistica-item:hover {
+  background-color: #e7f3ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 20px;
+}
