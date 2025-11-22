@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Reseña</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>Agregar nueva reseña</h1>
+</header>
+
+<section class="add-review-container">
+
+    <input type="text" id="searchDB" placeholder="Buscar título en la base de datos..." onkeyup="searchInDB()" />
+
+    <ul id="searchResults"></ul>
+
+    <textarea id="reviewText" placeholder="Escribe tu reseña aquí..."></textarea>
+
+    <button onclick="saveReview()" class="btn-primary">Guardar reseña</button>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

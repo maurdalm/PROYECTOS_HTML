@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reseñas Educativas</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>Reseñas de Películas, Videos y Documentales Educativos</h1>
+    <p>Explora, aprende y comparte tu opinión sobre contenido educativo.</p>
+</header>
+
+<nav class="menu">
+    <a href="#peliculas">Películas</a>
+    <a href="#videos">Videos</a>
+    <a href="#documentales">Documentales</a>
+</nav>
+
+<div class="actions">
+    <input type="text" id="searchInput" placeholder="Buscar reseña..." />
+    <button onclick="searchReview()">Buscar</button>
+
+    <a href="add-review.html" class="btn-primary">Agregar reseña</a>
+</div>
+
+<section id="peliculas" class="category">
+    <h2>Películas</h2>
+    <div id="movieList" class="item-list"></div>
+</section>
+
+<section id="videos" class="category">
+    <h2>Videos</h2>
+    <div id="videoList" class="item-list"></div>
+</section>
+
+<section id="documentales" class="category">
+    <h2>Documentales</h2>
+    <div id="documentaryList" class="item-list"></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+    "peliculas": [
+        {
+            "titulo": "El Origen del Conocimiento",
+            "cover": "img/origen.jpg",
+            "resena": "Una exploración profunda sobre la evolución del pensamiento humano.",
+            "comentarios": [
+                "Muy informativa",
+                "Excelente documental"
+            ]
+        },
+        {
+            "titulo": "Coco",
+            "cover": "/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
+            "resena": "Esta pelicula es un gran ejemplo de resilencia",
+            "comentarios": []
+        }
+    ],
+    "videos": [
+        {
+            "titulo": "La Física del Universo",
+            "cover": "img/fisica.jpg",
+            "resena": "Explicación simple y visual de conceptos complejos.",
+            "comentarios": [
+                "Muy claro",
+                "Buen material educativo"
+            ]
+        }
+    ],
+    "documentales": [
+        {
+            "titulo": "Historia de la Tecnología",
+            "cover": "img/tecnologia.jpg",
+            "resena": "Un recorrido por la evolución de los inventos más importantes.",
+            "comentarios": [
+                "Muy completo",
+                "Bien narrado"
+            ]
+        }
+    ]
+}

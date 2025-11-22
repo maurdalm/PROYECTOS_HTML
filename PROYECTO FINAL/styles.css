@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+}
+
+header {
+    background: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background: #004080;
+    padding: 10px;
+}
+
+.menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background: #0066cc;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.category {
+    padding: 25px;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.item img {
+    width: 130px;
+    border-radius: 5px;
+}
+
+.info {
+    padding-left: 20px;
+}
+
+.comments {
+    margin-top: 10px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.add-review-container {
+    padding: 20px;
+}
+
+#searchResults li {
+    list-style: none;
+    padding: 5px;
+    background: #e0e0e0;
+    margin-top: 5px;
+    cursor: pointer;
+}
