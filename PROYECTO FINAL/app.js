@@ -5,21 +5,24 @@ const API_KEY = "b46df14154e0d1dc69ba9d71f7d55448";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
+// CACHE PARA REDUCIR PETICIONES
+const searchCache = {};
+
+// DEBOUNCE PARA REDUCIR CONSULTAS
+let debounceTimer = null;
+
 // ============================================
 // CARGAR DATOS DESDE BACKEND PYTHON
 // ============================================
 async function loadReviews() {
     const response = await fetch("http://localhost:5000/reviews");
-    const data = await response.json();
-    return data;
+    return await response.json();
 }
 
 // ============================================
-// MOSTRAR CONTENIDO EN LA PÁGINA PRINCIPAL
+// CARGA DE LA PÁGINA PRINCIPAL
 // ============================================
 document.addEventListener("DOMContentLoaded", async () => {
-
-    // Si la página NO tiene contenedores (por ejemplo estás en add-review.html), salir
     if (!document.querySelector(".item-list")) return;
 
     const reviews = await loadReviews();
@@ -30,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // ============================================
-// RENDERIZAR CATEGORÍAS
+// RENDERIZAR CATEGORÍAS EN index.html
 // ============================================
 function displayCategory(items, elementID) {
     const container = document.getElementById(elementID);
@@ -40,24 +43,22 @@ function displayCategory(items, elementID) {
         const div = document.createElement("div");
         div.className = "item";
 
-        const coverURL = item.cover.includes("http")
-            ? item.cover
-            : IMG_URL + item.cover;
-
         div.innerHTML = `
-            <img src="${coverURL}" alt="${item.titulo}" />
+            <img src="${item.cover}" alt="${item.titulo}" />
             <div class="info">
                 <h3>${item.titulo}</h3>
+                <h4>Sipnosis</h4>
+                <p>${item.description}</p>
+                <h4>Reseña</h4>
                 <p>${item.resena}</p>
 
-                <div class="comments">
-                    <h4>Comentarios</h4>
-                    <ul>
-                        ${item.comentarios.map(c => `<li>${c}</li>`).join("")}
-                    </ul>
-                    <input type="text" placeholder="Agregar comentario" 
-                        onkeypress="addComment(event, '${item.titulo}')"/>
-                </div>
+                <!--
+                <h4>Comentarios</h4>
+                <ul>${(item.comentarios || []).map(c => `<li>${c}</li>`).join("")}</ul>
+
+                <input type="text" placeholder="Agregar comentario"
+                    onkeypress="addComment(event, '${item.titulo}')">
+                -->
             </div>
         `;
 
@@ -66,13 +67,11 @@ function displayCategory(items, elementID) {
 }
 
 // ============================================
-// BUSCADOR
+// BUSCADOR EN index.html
 // ============================================
 function searchReview() {
     const text = document.getElementById("searchInput").value.toLowerCase();
-    const items = document.querySelectorAll(".item");
-
-    items.forEach(item => {
+    document.querySelectorAll(".item").forEach(item => {
         const title = item.querySelector("h3").textContent.toLowerCase();
         item.style.display = title.includes(text) ? "flex" : "none";
     });
@@ -84,82 +83,177 @@ function searchReview() {
 async function addComment(event, title) {
     if (event.key !== "Enter") return;
 
-    const comment = event.target.value;
+    const comment = event.target.value.trim();
+    if (!comment) return;
+
     event.target.value = "";
 
-    const response = await fetch("http://localhost:5000/add_comment", {
+    await fetch("http://localhost:5000/add_comment", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ titulo: title, comentario: comment })
     });
 
-    const result = await response.json();
-    alert(result.message);
     location.reload();
 }
 
 // ============================================
-// TMDB: BUSCAR PELÍCULAS
+// BUSCADOR EN add-review.html (OPTIMIZADO)
 // ============================================
-async function searchMovieTMDB(query) {
-    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=es-ES&query=${query}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.results;
+let selectedItem = null;
+
+function searchInDB() {
+    const text = document.getElementById("searchDB").value.trim();
+    const list = document.getElementById("searchResults");
+
+    // Si no hay texto → limpiar resultados
+    if (text.length === 0) {
+        list.innerHTML = "";
+        return;
+    }
+
+    // Permite cambiar elección si se vuelve a escribir
+    if (selectedItem) {
+        selectedItem = null;
+        document.getElementById("selectedItemBox").innerHTML = "";
+    }
+
+    // Necesita mínimo 3 letras
+    if (text.length < 3) {
+        list.innerHTML = "";
+        return;
+    }
+
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => performSearch(text), 400);
 }
 
-// ============================================
-// BUSCADOR EN add-review.html
-// ============================================
-async function searchInDB() {
-    const text = document.getElementById("searchDB").value;
+async function performSearch(text) {
+    if (searchCache[text]) {
+        return displayResults(searchCache[text]);
+    }
 
-    if (text.length < 2) return;
+    const response = await fetch(
+        `http://localhost:5000/search_all?q=${encodeURIComponent(text)}`
+    );
 
-    const results = await searchMovieTMDB(text);
+    const data = await response.json();
 
+    searchCache[text] = data;
+    displayResults(data);
+}
+
+function displayResults(data) {
     const list = document.getElementById("searchResults");
     list.innerHTML = "";
 
-    results.forEach(movie => {
+    // TMDB
+    (data.movies || []).forEach(movie => {
+        const label = movie.is_documentary ? "🎥 Documental" : "🎬 Película";
+
         const li = document.createElement("li");
-        li.textContent = movie.title;
-        li.onclick = () => selectItemFromTMDB(movie);
+        li.className = "search-item";
+
+        li.innerHTML = `
+            <img src="${movie.cover}" class="thumb">
+            <div>
+                <strong>${label} — ${movie.title}</strong><br>
+                <small>${movie.description}</small>
+            </div>
+        `;
+
+        li.onclick = () => selectItem({
+            tipo: movie.is_documentary ? "documental" : "pelicula",
+            titulo: movie.title,
+            cover: movie.cover,
+            description: movie.description,
+            id: movie.id
+        });
+
+        list.appendChild(li);
+    });
+
+    // YouTube
+    (data.youtube || []).forEach(video => {
+        const label = video.is_documentary ? "🎥 Documental" : "📺 Video";
+
+        const li = document.createElement("li");
+        li.className = "search-item";
+
+        li.innerHTML = `
+            <img src="${video.cover}" class="thumb">
+            <div>
+                <strong>${label} — ${video.title}</strong><br>
+                <small>${video.description}</small>
+            </div>
+        `;
+
+        li.onclick = () => selectItem({
+            tipo: video.is_documentary ? "documental" : "video",
+            titulo: video.title,
+            cover: video.cover,
+            description: video.description,
+            id: video.id
+        });
+
         list.appendChild(li);
     });
 }
 
-let selectedMovie = null;
+// ============================================
+// MOSTRAR ELECCIÓN FINAL EN add-review.html
+// ============================================
+function selectItem(item) {
+    selectedItem = item;
 
-function selectItemFromTMDB(movie) {
-    selectedMovie = movie;
-    alert("Seleccionado: " + movie.title);
+    // Ocultar resultados
+    document.getElementById("searchResults").innerHTML = "";
+
+    // Limpiar barra de búsqueda
+    document.getElementById("searchDB").value = "";
+
+    // Mostrar selección
+    document.getElementById("selectedItemBox").innerHTML = `
+        <div class="selected-item">
+            <img src="${item.cover}" class="selected-cover">
+            <div>
+                <h2>${item.titulo}</h2>
+                <p>${item.description}</p>
+            </div>
+        </div>
+    `;
 }
 
 // ============================================
-// GUARDAR NUEVA RESEÑA EN PYTHON
+// GUARDAR RESEÑA
 // ============================================
 async function saveReview() {
-    const text = document.getElementById("reviewText").value;
+    const text = document.getElementById("reviewText").value.trim();
 
-    if (!selectedMovie || !text) {
-        alert("Selecciona una película y escribe la reseña.");
+    if (!selectedItem) {
+        alert("Debes seleccionar un elemento antes de guardar.");
+        return;
+    }
+
+    if (!text) {
+        alert("Escribe una reseña antes de guardar.");
         return;
     }
 
     const data = {
-        titulo: selectedMovie.title,
-        cover: selectedMovie.poster_path,
-        resena: text
+        tipo: selectedItem.tipo,
+        titulo: selectedItem.titulo,
+        cover: selectedItem.cover,
+        resena: text,
+        description: selectedItem.description,
+        comentarios: []
     };
 
-    const response = await fetch("http://localhost:5000/add_review", {
+    await fetch("http://localhost:5000/add_review", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
     });
 
-    const result = await response.json();
-    alert(result.message);
     window.location.href = "index.html";
 }

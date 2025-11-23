@@ -1,41 +1,198 @@
 {
     "peliculas": [
         {
-            "titulo": "El Origen del Conocimiento",
-            "cover": "img/origen.jpg",
-            "resena": "Una exploración profunda sobre la evolución del pensamiento humano.",
-            "comentarios": [
-                "Muy informativa",
-                "Excelente documental"
-            ]
-        },
-        {
             "titulo": "Coco",
             "cover": "/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
             "resena": "Esta pelicula es un gran ejemplo de resilencia",
+            "comentarios": [
+                "gran resumen"
+            ]
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Coco",
+            "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
+            "resena": "hfhgfhg",
+            "comentarios": [
+                "gran resumen"
+            ]
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Coco",
+            "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
+            "resena": "fggfhf\n",
+            "comentarios": [
+                "gran resumen"
+            ]
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Ghosting",
+            "cover": "https://image.tmdb.org/t/p/w500/zSw2JeQ03GivcS4VKJmWK5sYi1F.jpg",
+            "resena": "ghgjhgjh",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Perdoname Papa",
+            "cover": "https://image.tmdb.org/t/p/w500/b9FLi1lsg267ki2siw4wmXtUUHT.jpg",
+            "resena": "hghjg",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Super Mario Galaxy la película",
+            "cover": "https://image.tmdb.org/t/p/w500/zdOZeoRX4exApuCo2Cp57OkHtAJ.jpg",
+            "resena": "hgjhg",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "La princesa perdida",
+            "cover": "https://image.tmdb.org/t/p/w500/xXie22VAqXHMYBDTM2XpWRJWZIn.jpg",
+            "resena": "wrerwr",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Heartstone. Corazones de piedra",
+            "cover": "https://image.tmdb.org/t/p/w500/g5RhVUnOXJjvclVimlO2fnLaztK.jpg",
+            "resena": "ghjjgt",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "El hijo de mil hombres",
+            "cover": "https://image.tmdb.org/t/p/w500/yfkecTToGVoq7hUE1xlay7ccM9e.jpg",
+            "resena": "hgjghjg",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "La boda de mi novia",
+            "cover": "https://image.tmdb.org/t/p/w500/wzpwCQF9et6ltaw21tSI2gl9wXa.jpg",
+            "resena": "rtytryt",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Yu-Gi-Oh! La Película: Pirámide de la Luz",
+            "cover": "https://image.tmdb.org/t/p/w500/55AhknRSYBlIerj4x5QnIT4Zsj6.jpg",
+            "resena": "gfghfhg",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "You Got Served",
+            "cover": "https://image.tmdb.org/t/p/w500/xx3Y9WC8XKWVkourcTDCGbfP6Oh.jpg",
+            "resena": "gfghfhg",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "La sangre de un poeta",
+            "cover": "https://image.tmdb.org/t/p/w500/nBjrGmj1duapTtryKvmMfz9rqkr.jpg",
+            "resena": "asda",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Hola, mi nombre es Doris",
+            "cover": "https://image.tmdb.org/t/p/w500/AujnHhniriDLPiAeLUhYO29XyxX.jpg",
+            "resena": "hola",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Gold, la gran estafa",
+            "cover": "https://image.tmdb.org/t/p/w500/iau0snwmDnEa52okDhkT6J3bYsa.jpg",
+            "resena": "lñjlkjkl",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Oro",
+            "cover": "https://image.tmdb.org/t/p/w500/2HncdDCSSeJQLIz3bAOocigqDqN.jpg",
+            "resena": "jhkhjk",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Barbie",
+            "cover": "https://image.tmdb.org/t/p/w500/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
+            "resena": "nm,. nmnm,nmn",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "Coco",
+            "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
+            "resena": "gran pelicukla",
+            "description": "Un joven aspirante a músico llamado Miguel se embarca en un viaje extraordinario a la mágica tierra de sus ancestros. Allí, el encantador embaucador Héctor se convierte en su inesperado amigo y le ayuda a descubrir los misterios detrás de las historias y tradiciones de su familia.",
+            "comentarios": [
+                "gran resumen"
+            ]
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "LEGO Marvel Avengers: Misión Demolición",
+            "cover": "https://image.tmdb.org/t/p/w500/akI6Am89tpdVeozYFq2DaBbP7I0.jpg",
+            "resena": "gran pelicular que enseña los valores de la familia",
+            "description": "Un joven aspirante a héroe y fan de los superhéroes libera por accidente a un nuevo y poderoso villano decidido a borrar a los Vengadores de la faz de la Tierra.",
             "comentarios": []
         }
     ],
     "videos": [
         {
-            "titulo": "La Física del Universo",
+            "titulo": "La FÃ­sica del Universo",
             "cover": "img/fisica.jpg",
-            "resena": "Explicación simple y visual de conceptos complejos.",
+            "resena": "ExplicaciÃ³n simple y visual de conceptos complejos.",
             "comentarios": [
                 "Muy claro",
                 "Buen material educativo"
+            ]
+        },
+        {
+            "tipo": "video",
+            "titulo": "T.E. - I Got Time Today (Official Music Video)",
+            "cover": "https://i.ytimg.com/vi/dqpDOno095k/hqdefault.jpg",
+            "resena": "gfhgfghfh",
+            "comentarios": [
+                " vxvx"
             ]
         }
     ],
     "documentales": [
         {
-            "titulo": "Historia de la Tecnología",
+            "titulo": "Historia de la TecnologÃ­a",
             "cover": "img/tecnologia.jpg",
-            "resena": "Un recorrido por la evolución de los inventos más importantes.",
+            "resena": "Un recorrido por la evoluciÃ³n de los inventos mÃ¡s importantes.",
             "comentarios": [
                 "Muy completo",
                 "Bien narrado"
             ]
+        },
+        {
+            "tipo": "documental",
+            "titulo": "30 años de documentales de National Geographic",
+            "cover": "https://image.tmdb.org/t/p/w500/3XpCqFg6noqx83UpHzV65A8I0gf.jpg",
+            "resena": "hala ",
+            "comentarios": []
+        },
+        {
+            "tipo": "documental",
+            "titulo": "John Philip Holland: aireagóir an fhomhuireáin nua-aoisigh",
+            "cover": "https://image.tmdb.org/t/p/w500/AncFtW938MG2mD7yyIIqVj8yTdF.jpg",
+            "resena": "gfdfdgf",
+            "comentarios": []
+        },
+        {
+            "tipo": "documental",
+            "titulo": "Is the DFB-Pokal the Best Cup Competition in the World?",
+            "cover": "",
+            "resena": "sdfsf",
+            "comentarios": []
         }
     ]
 }

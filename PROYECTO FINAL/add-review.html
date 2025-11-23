@@ -18,12 +18,22 @@
 
     <ul id="searchResults"></ul>
 
-    <textarea id="reviewText" placeholder="Escribe tu reseña aquí..."></textarea>
+    <!-- 🔥 AQUI SE AGREGA EL CUADRO CON EL RESULTADO SELECCIONADO -->
+    <div id="selectedItemBox"></div>
+    <!-- 🔥 FIN DE AGREGADO -->
 
-    <button onclick="saveReview()" class="btn-primary">Guardar reseña</button>
+    <h2>Escribe tu reseña</h2>
+    <div class="review-writer">
+        
+        <textarea id="reviewText" placeholder="Escribe tu reseña aquí..."></textarea>
 
+        <button type="button" onclick="saveReview()" class="btn-primary">Guardar reseña</button>
+    </div>
 </section>
 
+<footer>
+    © 2025 Proyecto final de Mauricio Alberto Daleman Mahecha. Todos los derechos reservados.
+</footer>
 <script src="app.js"></script>
 </body>
 </html>
