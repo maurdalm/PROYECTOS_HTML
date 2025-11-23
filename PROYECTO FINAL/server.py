@@ -3,6 +3,7 @@ from flask_cors import CORS
 import requests
 import json
 import os
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
@@ -30,32 +31,38 @@ def save_db(data):
 
 
 # =====================================================
-# Buscar en TMDB — con filtros reales que sí funcionan:
-# - Español ("es-ES")
-# - Eliminación manual de contenidos NO TP
+# Buscar en TMDB
 # =====================================================
 def search_tmdb(query):
 
-    url = (
-        "https://api.themoviedb.org/3/search/movie"
-        f"?api_key={TMDB_KEY}"
-        f"&query={query}"
-        f"&language=es-ES"
-        f"&include_adult=false"
-    )
+    def fetch_tmdb(language):
+        url = (
+            "https://api.themoviedb.org/3/search/movie"
+            f"?api_key={TMDB_KEY}"
+            f"&query={query}"
+            f"&language={language}"
+            f"&include_adult=false"
+        )
+        res = requests.get(url).json()
+        return res.get("results", [])
 
-    res = requests.get(url).json()
-    results = res.get("results", [])
+    # Buscar primero en español
+    results_es = fetch_tmdb("es-ES")
+
+    # Si no hay resultados → buscar en inglés
+    results_en = fetch_tmdb("en-US") if len(results_es) == 0 else []
+
+    # Combinar sin duplicados
+    results = {movie["id"]: movie for movie in (results_es + results_en)}
+    results = list(results.values())
 
     clean = []
 
     for movie in results:
 
-        # Solo contenido con overview válido
         if not movie.get("overview"):
             continue
 
-        # Obtener certificación real
         cert_url = (
             f"https://api.themoviedb.org/3/movie/{movie['id']}/release_dates"
             f"?api_key={TMDB_KEY}"
@@ -71,7 +78,7 @@ def search_tmdb(query):
                         is_TP = True
 
         if not is_TP:
-            continue  # DESCARTAR contenido no apto
+            continue
 
         genres = movie.get("genre_ids", [])
         is_documentary = 99 in genres
@@ -92,10 +99,7 @@ def search_tmdb(query):
 
 
 # =====================================================
-# Buscar en YouTube con filtros:
-# - Español
-# - Seguro
-# - Eliminación manual de contenido restringido
+# Buscar en YouTube
 # =====================================================
 def search_youtube(query):
 
@@ -121,13 +125,11 @@ def search_youtube(query):
         title = snippet.get("title", "")
         desc = snippet.get("description", "")
 
-        # FILTRO: eliminar videos de lenguaje inapropiado
         lower = f"{title.lower()} {desc.lower()}"
         prohibidas = ["18+", "violento", "sangre", "sexo", "nsfw"]
         if any(p in lower for p in prohibidas):
             continue
 
-        # Detectar documental
         is_documentary = any(
             word in lower for word in ["documental", "documentary", "docu"]
         )
@@ -164,22 +166,48 @@ def get_reviews():
 
 
 # =====================================================
-# Agregar nueva reseña
+# Agregar nueva reseña (con saltos de línea y guiones)
 # =====================================================
 @app.route("/add_review", methods=["POST"])
 def add_review():
     db = load_db()
     new = request.json
-
     tipo = new["tipo"]
 
     if tipo == "pelicula":
-        db["peliculas"].append(new)
+        t = "peliculas"
+    elif tipo == "documental":
+        t = "documentales"
     elif tipo == "video":
-        db["videos"].append(new)
+        t = "videos"
     else:
-        db["documentales"].append(new)
+        t = tipo + "s"  # por defecto
 
+
+    # Convertir a DataFrame
+    df = pd.DataFrame(db[t])
+
+    # Formato de separación
+    new_review_formatted = f"- {new['resena'].strip()}</br>"
+
+    # Si no hay datos aún
+    if df.empty:
+        new["resena"] = new_review_formatted
+        df = pd.DataFrame([new])
+    else:
+        # Buscar si ya existe un item con el mismo título
+        mask = df["titulo"] == new["titulo"]
+
+        if mask.any():
+            index = df[mask].index[0]
+            df.at[index, "resena"] = (
+                df.at[index, "resena"] + new_review_formatted
+            )
+        else:
+            new["resena"] = new_review_formatted
+            df = pd.concat([df, pd.DataFrame([new])], ignore_index=True)
+
+    db[t] = df.to_dict(orient="records")
     save_db(db)
 
     return jsonify({"message": "Reseña guardada correctamente"})

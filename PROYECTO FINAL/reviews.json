@@ -1,197 +1,71 @@
 {
     "peliculas": [
         {
-            "titulo": "Coco",
-            "cover": "/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
-            "resena": "Esta pelicula es un gran ejemplo de resilencia",
-            "comentarios": [
-                "gran resumen"
-            ]
-        },
-        {
             "tipo": "pelicula",
             "titulo": "Coco",
             "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
-            "resena": "hfhgfhg",
-            "comentarios": [
-                "gran resumen"
-            ]
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Coco",
-            "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
-            "resena": "fggfhf\n",
-            "comentarios": [
-                "gran resumen"
-            ]
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Ghosting",
-            "cover": "https://image.tmdb.org/t/p/w500/zSw2JeQ03GivcS4VKJmWK5sYi1F.jpg",
-            "resena": "ghgjhgjh",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Perdoname Papa",
-            "cover": "https://image.tmdb.org/t/p/w500/b9FLi1lsg267ki2siw4wmXtUUHT.jpg",
-            "resena": "hghjg",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Super Mario Galaxy la película",
-            "cover": "https://image.tmdb.org/t/p/w500/zdOZeoRX4exApuCo2Cp57OkHtAJ.jpg",
-            "resena": "hgjhg",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "La princesa perdida",
-            "cover": "https://image.tmdb.org/t/p/w500/xXie22VAqXHMYBDTM2XpWRJWZIn.jpg",
-            "resena": "wrerwr",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Heartstone. Corazones de piedra",
-            "cover": "https://image.tmdb.org/t/p/w500/g5RhVUnOXJjvclVimlO2fnLaztK.jpg",
-            "resena": "ghjjgt",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "El hijo de mil hombres",
-            "cover": "https://image.tmdb.org/t/p/w500/yfkecTToGVoq7hUE1xlay7ccM9e.jpg",
-            "resena": "hgjghjg",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "La boda de mi novia",
-            "cover": "https://image.tmdb.org/t/p/w500/wzpwCQF9et6ltaw21tSI2gl9wXa.jpg",
-            "resena": "rtytryt",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Yu-Gi-Oh! La Película: Pirámide de la Luz",
-            "cover": "https://image.tmdb.org/t/p/w500/55AhknRSYBlIerj4x5QnIT4Zsj6.jpg",
-            "resena": "gfghfhg",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "You Got Served",
-            "cover": "https://image.tmdb.org/t/p/w500/xx3Y9WC8XKWVkourcTDCGbfP6Oh.jpg",
-            "resena": "gfghfhg",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "La sangre de un poeta",
-            "cover": "https://image.tmdb.org/t/p/w500/nBjrGmj1duapTtryKvmMfz9rqkr.jpg",
-            "resena": "asda",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Hola, mi nombre es Doris",
-            "cover": "https://image.tmdb.org/t/p/w500/AujnHhniriDLPiAeLUhYO29XyxX.jpg",
-            "resena": "hola",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Gold, la gran estafa",
-            "cover": "https://image.tmdb.org/t/p/w500/iau0snwmDnEa52okDhkT6J3bYsa.jpg",
-            "resena": "lñjlkjkl",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Oro",
-            "cover": "https://image.tmdb.org/t/p/w500/2HncdDCSSeJQLIz3bAOocigqDqN.jpg",
-            "resena": "jhkhjk",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Barbie",
-            "cover": "https://image.tmdb.org/t/p/w500/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
-            "resena": "nm,. nmnm,nmn",
-            "comentarios": []
-        },
-        {
-            "tipo": "pelicula",
-            "titulo": "Coco",
-            "cover": "https://image.tmdb.org/t/p/w500/vwsFGblLYxWBNjg9pdWN1Mm5YfW.jpg",
-            "resena": "gran pelicukla",
+            "resena": "- Coco es un ejemplo de el valor de la cultura y la familia en la cultura latinoamericana, de como la unión familiar es uno de los pilares de nuestra cultura.</br>",
             "description": "Un joven aspirante a músico llamado Miguel se embarca en un viaje extraordinario a la mágica tierra de sus ancestros. Allí, el encantador embaucador Héctor se convierte en su inesperado amigo y le ayuda a descubrir los misterios detrás de las historias y tradiciones de su familia.",
-            "comentarios": [
-                "gran resumen"
-            ]
+            "comentarios": []
         },
         {
             "tipo": "pelicula",
-            "titulo": "LEGO Marvel Avengers: Misión Demolición",
-            "cover": "https://image.tmdb.org/t/p/w500/akI6Am89tpdVeozYFq2DaBbP7I0.jpg",
-            "resena": "gran pelicular que enseña los valores de la familia",
-            "description": "Un joven aspirante a héroe y fan de los superhéroes libera por accidente a un nuevo y poderoso villano decidido a borrar a los Vengadores de la faz de la Tierra.",
+            "titulo": "En busca de la Felicidad",
+            "cover": "https://media.themoviedb.org/t/p/w300_and_h450_face/qF6JFr6IdfNep0x6yw3i7S8avAb.jpg",
+            "resena": "- En busca de la Felicidad es un ejemplo de perseverancia y esperanza, mostrando cómo el amor y la determinación pueden superar las adversidades más difíciles.</br>",
+            "description": "Chris Gardner es un vendedor brillante y con talento, pero su empleo no le permite cubrir sus necesidades más básicas. Tanto es así que acaban echándolo, junto a su hijo de cinco años, de su piso de San Francisco y no tienen ningún lugar al que ir. Cuando Gardner consigue hacer unas prácticas en una prestigiosa correduría de bolsa, los dos protagonistas tendrán que afrontar muchas adversidades parar hacer realidad su sueño de una vida mejor. Basada en hechos reales.",
+            "comentarios": []
+        },
+        {
+            "tipo": "pelicula",
+            "titulo": "El niño que domó el viento",
+            "cover": "https://media.themoviedb.org/t/p/w300_and_h450_face/f9LYaF5Q4pfaF8Gzk64S78VLBKh.jpg",
+            "resena": "- El niño que domó el viento es un ejemplo de ingenio y determinación, mostrando cómo la creatividad puede cambiar vidas.</br>",
+            "description": "Un chico de la República de Malaui decide ayudar a las personas de su pueblo construyendo una turbina después de leer un libro en el que se explican los pasos para su creación. Película basada en el libro homónimo de William Kamkwamba y Bryan Mealer.",
             "comentarios": []
         }
     ],
     "videos": [
         {
-            "titulo": "La FÃ­sica del Universo",
-            "cover": "img/fisica.jpg",
-            "resena": "ExplicaciÃ³n simple y visual de conceptos complejos.",
-            "comentarios": [
-                "Muy claro",
-                "Buen material educativo"
-            ]
+            "tipo": "video",
+            "titulo": "Seguidor de Líneas Negra y Blanca",
+            "cover": "https://i.ytimg.com/vi/mANdDcYmHxc/hqdefault.jpg",
+            "resena": "- El video transmite un mensaje inspirador y motivador, invitando al espectador a reflexionar sobre sus sueños y a actuar con determinación. Está bien estructurado, con una producción visual clara y un ritmo que mantiene el interés. En general, genera una sensación de positivismo y empoderamiento.</br>",
+            "description": "Descubra la fabricación de PCB fácil, asequible y confiable con JLCPCB! Regístrese para recibir cupones de $70 para nuevos ...",
+            "comentarios": []
         },
         {
             "tipo": "video",
-            "titulo": "T.E. - I Got Time Today (Official Music Video)",
-            "cover": "https://i.ytimg.com/vi/dqpDOno095k/hqdefault.jpg",
-            "resena": "gfhgfghfh",
-            "comentarios": [
-                " vxvx"
-            ]
+            "titulo": "Inteligencia Artificial en la ingeniería",
+            "cover": "https://i.ytimg.com/vi/sVDKz7H8lt4/hqdefault.jpg",
+            "resena": "- El video explora cómo la inteligencia artificial potencia la ingeniería, automatizando procesos complejos y optimizando diseños. Muestra ejemplos concretos de aplicación en distintas ramas, desde manufactura hasta desarrollo de software. Además, resalta el impacto de la IA en la formación profesional y la innovación tecnológica.</br>",
+            "description": "Prueba inical Maestria en Automatización Industrial - Universidad Nacional de Colombia - Sede Bogotá",
+            "comentarios": []
+        },
+        {
+            "tipo": "video",
+            "titulo": "¿Qué es una API? - La mejor explicación en español",
+            "cover": "https://i.ytimg.com/vi/u2Ms34GE14U/hqdefault.jpg",
+            "resena": "- El video explica de manera clara y sencilla qué es una API y cómo permite que diferentes aplicaciones se comuniquen entre sí. Utiliza ejemplos prácticos para que conceptos técnicos complejos sean fáciles de entender. Además, destaca la importancia de las APIs en el desarrollo de software moderno y la integración de servicios digitales.</br>",
+            "description": "Las APIs permiten que las aplicaciones se comuniquen y puedan aprovechar desarrollos ya construidos en lugar de tener que ...",
+            "comentarios": []
+        },
+        {
+            "tipo": "video",
+            "titulo": "INVENTOS EXTRAORDINARIOS -INCREÍBLE CON DAN AYKROYD - EP COMPLETO",
+            "cover": "https://i.ytimg.com/vi/lwXz_rCSKT4/hqdefault.jpg",
+            "resena": "- Este episodio del programa “Increíble con Dan Aykroyd” explora inventos realmente extraños, como una máscara antigás para bebés, un robot que come babosas, y hasta un sistema de seguridad para ataúdes. \nCon el enfoque curioso y analítico de Aykroyd, se combinan entrevistas con expertos e imágenes dinámicas para mostrar que lo increíble no siempre es ficción.</br>",
+            "description": "Exploramos algunos de los inventos más extravagantes de la historia: desde una máscara de gas para bebés y un robot ...",
+            "comentarios": []
         }
     ],
     "documentales": [
         {
-            "titulo": "Historia de la TecnologÃ­a",
-            "cover": "img/tecnologia.jpg",
-            "resena": "Un recorrido por la evoluciÃ³n de los inventos mÃ¡s importantes.",
-            "comentarios": [
-                "Muy completo",
-                "Bien narrado"
-            ]
-        },
-        {
             "tipo": "documental",
-            "titulo": "30 años de documentales de National Geographic",
-            "cover": "https://image.tmdb.org/t/p/w500/3XpCqFg6noqx83UpHzV65A8I0gf.jpg",
-            "resena": "hala ",
-            "comentarios": []
-        },
-        {
-            "tipo": "documental",
-            "titulo": "John Philip Holland: aireagóir an fhomhuireáin nua-aoisigh",
-            "cover": "https://image.tmdb.org/t/p/w500/AncFtW938MG2mD7yyIIqVj8yTdF.jpg",
-            "resena": "gfdfdgf",
-            "comentarios": []
-        },
-        {
-            "tipo": "documental",
-            "titulo": "Is the DFB-Pokal the Best Cup Competition in the World?",
-            "cover": "",
-            "resena": "sdfsf",
+            "titulo": "▸Planeta Tierra: Un Hogar Único ◎ Documental",
+            "cover": "https://i.ytimg.com/vi/4YQfjo-JpXQ/hqdefault.jpg",
+            "resena": "- Este documental es un viaje visual de 4 500 millones de años, que nos lleva desde los orígenes oscuros de la Tierra hasta su esplendor actual, mostrando montañas, ríos, desiertos y bosques. \nCon imágenes aéreas impactantes, invita a reflexionar sobre lo hermoso y frágil que es nuestro planeta, destacando la necesidad de cuidarlo para las generaciones futuras.</br>",
+            "description": "Hemos hecho un viaje de 4500 millones de años, y ahora hemos regresado a nuestro tiempo actual. Ver las creaciones tan ...",
             "comentarios": []
         }
     ]
